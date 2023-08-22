@@ -9,6 +9,7 @@ import {
 
 import OpenAIChatBotHeader from "./OpenAIChatBotHeader";
 import OpenAIChatBotChatInput from "./OpenAIChatBotChatInput";
+import OpenAIChatBotMessages from "./OpenAIChatBotMessages";
 
 const OpenAIChatBot: FC = () => {
   return (
@@ -25,7 +26,7 @@ const OpenAIChatBot: FC = () => {
             </AccordionTrigger>
             <AccordionContent>
               <div className="flex flex-col h-80">
-                messages
+                <OpenAIChatBotMessages className="px-2 py-3 flex-1" />
                 <OpenAIChatBotChatInput className="px-4" />
               </div>
             </AccordionContent>

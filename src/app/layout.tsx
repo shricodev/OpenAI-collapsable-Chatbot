@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import OpenAIChatBot from "./components/OpenAIChatBot";
+import Providers from "./components/Providers";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <OpenAIChatBot />
-        {children}
-      </body>
+      <Providers>
+        <body className={inter.className}>
+          <Toaster position="bottom-center" />
+          <OpenAIChatBot />
+          {children}
+        </body>
+      </Providers>
     </html>
   );
 }
